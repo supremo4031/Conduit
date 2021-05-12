@@ -1,0 +1,105 @@
+
+div.sticky {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
+nav {
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+.spacing {
+	width: 100%;
+	display: block;
+	padding: 7px;
+}
+
+nav ul {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+ul.topnav li {
+    list-style: none;
+    float: left;
+}
+
+ul.topnav li.topnav-right {
+    float: right;
+}
+
+ul.topnav li a {
+    text-decoration: none;
+    display: block;
+    min-height: 20px;
+    padding: 14px;
+    color: gray;
+    height: auto;
+    text-align: center;
+}
+
+ul.topnav li.topnav-right a {
+    position: relative;
+    top: 20px;
+    padding-left: 0;
+}
+
+ul.topnav li a.conduit-text {
+    padding-left: 0;
+}
+
+
+ul.topnav li a h1 {
+    font-size: 40px;
+    font-family: 'Lora', serif;
+    color: black;
+}
+
+.conduit-logo {
+    height: 55px;
+    width: 55px;
+}
+
+ul.topnav li.searchbar {
+    display: block;
+}
+
+ul.topnav li.searchbar a {
+    padding-left: 0;
+}
+
+ul.topnav li.searchbar a input {
+    border: none;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-family: 'Raleway', sans-serif;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.slide-search {
+    display: block;
+}
+
+
+// ****************** Animation **************
+
+@keyframes searchSlide {
+    0% {display: none;}
+    100% {display: block;}
+}
+
+@keyframes slidein {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}

@@ -1,0 +1,28 @@
+
+#overall
+/tuto
+
+#backend
+/backend/node_modules
+/backend/.env
+
+#frontend
+frontend/medium/node_modules
+frontend/medium/.pnp
+frontend/medium.pnp.js
+
+frontend/medium/coverage
+
+# production
+frontend/medium/build
+
+# misc
+frontend/medium/.DS_Store
+frontend/medium/.env.local
+frontend/medium/.env.development.local
+frontend/medium/.env.test.local
+frontend/medium/.env.production.local
+
+frontend/medium/npm-debug.log*
+frontend/medium/yarn-debug.log*
+frontend/medium/yarn-error.log*

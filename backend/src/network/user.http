@@ -1,0 +1,20 @@
+
+
+// get current user
+GET http://localhost:4000/api/user
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+###
+
+// update current user
+PATCH http://localhost:4000/api/user
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+{
+    "user" : {
+        "image" : "this is image",
+        "bio": "this is bio"
+    }
+}

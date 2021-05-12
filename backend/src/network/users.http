@@ -1,0 +1,25 @@
+// @collapse
+
+//  *************** login user ***************
+
+POST http://localhost:4000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "supremo@gmail.com",
+    "password": "supremo"
+}
+
+###
+
+
+// ************** create new user ************
+
+POST http://localhost:4000/api/users/
+Content-Type: application/json
+
+{
+    "username": "supremo",
+    "email": "supremo@gmail.com",
+    "password": "supremo"
+}

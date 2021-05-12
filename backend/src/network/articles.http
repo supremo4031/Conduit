@@ -1,0 +1,98 @@
+
+
+// CREATE an article
+POST http://localhost:4000/api/articles
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+{
+    "article": {
+        "title": "This is my first article",
+        "description": "This is the description of the article",
+        "body": "This is the body of the article",
+        "tagList": [
+            "article",
+            "what"
+        ]
+    }
+}
+
+
+###
+
+// DELETE an article
+DELETE http://localhost:4000/api/articles/this-is-my-first-article
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+
+
+###
+
+// UPDATE an article
+PATCH http://localhost:4000/api/articles/this-is-my-first-article
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+{
+    "article": {
+        "title": "what the fuck",
+        "description": "let's fuck tonight",
+        "body": "oh yeah!! oh yeaaaaaah!!"
+    }
+}
+
+
+
+###
+
+// GET all articles
+GET http://localhost:4000/api/articles/all
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+
+
+###
+
+// GET all Feed articles
+GET http://localhost:4000/api/articles/feed
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+
+
+###
+
+// GET article by slug
+GET http://localhost:4000/api/articles/this-is-my-first-article
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+###
+
+
+// POST create a comment 
+POST http://localhost:4000/api/articles/this-is-my-first-article/comments
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+{
+    "comment": {
+        "body": "this is my first comment"
+    }
+}
+
+### 
+
+// GET get all comments from an article
+GET http://localhost:4000/api/articles/this-is-my-first-article/comments
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
+
+###
+
+// DELETE delete a comment 
+DELETE http://localhost:4000/api/articles/this-is-my-first-article/comments/28257d52-c636-42c0-b3f1-95d4beefabdf
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cHJlbW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdXByZW1vIiwiaWF0IjoxNjE4NDgzMDIxfQ.lisY4hbmFZvaQpAe63Bar2njGg5qtcnzZMajfLAU0JY
