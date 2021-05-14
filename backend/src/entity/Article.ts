@@ -14,25 +14,25 @@ import { User } from './User';
 @Entity('articles')
 export class Article {
 	@PrimaryColumn({
-		length: 90,
+		length: 120,
 	})
 	slug: string;
 
 	@Column({
-		length: 50,
+		length: 70,
 	})
 	title: string;
 
 	@Column({
-		length: 100,
+		length: 200,
 		nullable: true,
 	})
 	description?: string;
 
-	@Column({
-		type: 'text',
+	@Column('text',{
+		array: true
 	})
-	body: string;
+	body: string[];
 
 	@ManyToMany(() => Tag, (tags) => tags.articles, {
 		onUpdate: 'CASCADE',
@@ -69,7 +69,7 @@ export class Article {
 		slug: string,
 		title: string,
 		description: string,
-		body: string,
+		body: string[],
 		tagList: Tag[],
 		favorited: User[],
 		author: User

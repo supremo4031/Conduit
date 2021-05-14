@@ -11,7 +11,9 @@ route.post('/login', async (req, res) => {
         })
         
         const date = new Date();
-        date.setTime(date.getTime() + 60 * 60 * 1000);
+        const days = 1;
+		const expiry = 1000 * 60 * 60 * 24 * days;
+        date.setTime(date.getTime() + expiry);
         res.cookie('jwt', user.token, {
             expires: date,
             httpOnly: true
@@ -40,7 +42,9 @@ route.post('/', async (req, res) => {
         })
 
         const date = new Date();
-		date.setTime(date.getTime() + 60 * 60 * 1000);
+        const days = 1;
+        const expiry = (1000 * 60 * 60 * 24) * days;
+		date.setTime(date.getTime() + expiry);
 		res.cookie('jwt', user.token, {
 			expires: date,
 			httpOnly: true,

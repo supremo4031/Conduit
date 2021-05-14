@@ -4,6 +4,10 @@
 //     background-color: aqua;
 // }
 
+.articledetails {
+    margin-top: 50px;
+}
+
 .articledetails h1 {
     font-family: 'Lora', serif;
     font-size: 300%;
@@ -13,6 +17,11 @@
 .articledetails p {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 150%;
+    overflow: hidden;
+}
+
+.article-body-div {
+    margin-top: 40px;
 }
 
 

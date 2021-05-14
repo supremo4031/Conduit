@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto&family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Noto+Serif+KR:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -30,6 +33,14 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     vertical-align: baseline;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
 .hn {
   font-family: 'Helvetica Neue', sans-serif;
 }
@@ -38,14 +49,22 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   font-family: 'Roboto', sans-serif;
 }
 
-.lr {
-  font-family: 'Lora', serif;
-}
-
 .rw {
   font-family: 'Raleway', sans-serif;
 }
 
 .ns {
   font-family: 'Noto Sans JP', sans-serif;
+}
+
+.lr {
+  font-family: 'Lora', serif;
+}
+
+.nsk {
+  font-family: 'Noto Serif KR', serif;
+}
+
+.cg {
+  font-family: 'Cormorant Garamond', serif;
 }

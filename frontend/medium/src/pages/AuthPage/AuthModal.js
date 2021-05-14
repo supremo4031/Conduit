@@ -1,5 +1,6 @@
 import { Button, Checkbox, FormControlLabel, Grid, TextField } from '@material-ui/core';
 import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import validator from 'validator'
 import './AuthModal.scss'
@@ -45,7 +46,7 @@ export default function AuthModal(props) {
 		if (res.status !== 200) {
 		} else {
 			// history.push('/home');
-			props.handleModal();
+			props.closeModal();
 		}
 
 		console.log(res);
@@ -82,23 +83,23 @@ export default function AuthModal(props) {
 			if (res.status !== 201) {
 			} else {
 				// history.push('/home');
+				props.closeModal();
 			}
 		}
 	};
 
-	return (
+	const modalRoot = document.getElementById('modal-root');
+
+	return ReactDOM.createPortal (
 		<div
-			className="modal"
-			style={{
-				display: props.visibility ? 'block' : 'none',
-			}}>
+			className="modal">
 			<div className="modal-content">
 				<div className="close-div">
 					<span
 						className="close"
 						onClick={(e) => {
 							e.preventDefault();
-							props.handleModal();
+							props.closeModal();
 						}}>
 						&times;
 					</span>
@@ -110,9 +111,7 @@ export default function AuthModal(props) {
 							name="tabs"
 							id="tab1"
 							checked={loginOrRegister}
-							onChange={() => {
-
-							}}
+							onChange={() => {}}
 							onClick={() => {
 								setLoginOrRegister(!loginOrRegister);
 							}}
@@ -226,6 +225,7 @@ export default function AuthModal(props) {
 										style={{
 											margin: '5px auto',
 											marginTop: '10px',
+											textTransform: 'capitalize',
 										}}
 									/>
 								</Grid>
@@ -247,6 +247,7 @@ export default function AuthModal(props) {
 										style={{
 											margin: '5px auto',
 											marginTop: '10px',
+											textTransform: 'capitalize',
 										}}
 									/>
 								</Grid>
@@ -355,6 +356,7 @@ export default function AuthModal(props) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>,
+		modalRoot
 	);
 }

@@ -1,0 +1,73 @@
+
+.post-page-tags .tag {
+    display: inline-block;
+    border: 1px solid #333;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+    background-color: #eef5ff;
+}
+
+.post-page-tags .tag-tags {
+    margin-top: 30px;
+}
+
+.post-page-tags .tag:hover {
+    cursor: pointer;
+    color: brown;
+}
+
+.post-page-tags .cross:hover {
+    color: black;
+}
+
+input:focus {
+    outline: none;
+}
+
+.tag-input {
+    display: inline-block;
+}
+
+.tag-input input {
+    display: inline-block;
+    background-color: #eef5ff;
+    border: 1px solid #1976d2;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 20px;
+    text-transform: capitalize;
+    outline: none;
+}
+
+.post-add-button {
+	display: inline-block;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-left: 20px;
+    margin-right: 30px;
+    padding: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #fff;
+    border: none;
+	background-color: #1976d2;
+}
+
+.post-add-button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 1px rgba(1, 1, 1, 0.2);
+}
+
+.error-div {
+    color: red;
+}

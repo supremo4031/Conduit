@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import './NavBar.scss';
 import conduit from './conduit.png';
 import SearchIcon from '@material-ui/icons/Search';
+import { useHistory } from 'react-router';
 
 export default function NavBar(props) {
+
+	const history = useHistory();
+
 	const [searchOption, setSearchOption] = useState('none');
 
-    const authenticated = () => {
-        return props.name !== ''
-    }
+    const authenticated = props.name !== '';
 
 	return (
 		<div className="row sticky">
@@ -18,7 +20,7 @@ export default function NavBar(props) {
 					<div className="spacing"></div>
 					<ul className="topnav">
 						<li>
-							<a href="#conduit">
+							<a href="/">
 								<img
 									src={conduit}
 									alt="conduit-logo"
@@ -27,20 +29,20 @@ export default function NavBar(props) {
 							</a>
 						</li>
 						<li>
-							<a href="#conduit" className="conduit-text">
+							<a href="/" className="conduit-text">
 								<h1>Conduit</h1>
 							</a>
 						</li>
 						<li
 							className="topnav-right"
 							style={{
-								display: authenticated() ? 'none': 'block',
+								display: authenticated ? 'none': 'block',
 							}}>
 							<a
 								href="/"
 								onClick={(e) => {
 									e.preventDefault();
-									props.handleModal();
+									props.openModal();
 								}}>
 								Sign in
 							</a>
@@ -48,7 +50,7 @@ export default function NavBar(props) {
 						<li
 							className="topnav-right"
 							style={{
-								display: authenticated() ? 'none': 'block',
+								display: !authenticated ? 'none': 'block',
 							}}>
 							<a
 								href="/"
@@ -61,10 +63,10 @@ export default function NavBar(props) {
 						<li className="topnav-right">
 							<a href="/" onClick={(e) => {
                                 e.preventDefault();
-                                if(authenticated()) {
-
+                                if(authenticated) {
+									history.push('/post')
                                 } else {
-                                    props.handleModal();
+                                    props.openModal();
                                 }
                             }}>Post</a>
 						</li>

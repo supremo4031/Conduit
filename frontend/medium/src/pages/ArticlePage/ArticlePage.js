@@ -11,7 +11,7 @@ export default function ArticlePage(props) {
 	const [article, setArticle] = useState({
 		description: '',
 		title: '',
-		body: '',
+		body: [''],
 	});
 
 	useEffect(() => {
@@ -23,11 +23,15 @@ export default function ArticlePage(props) {
 					}
 				);
 				if (res.status === 200) {
+					console.log(res.data.article);
 					setArticle(res.data.article);
 					console.log(res.data);
 				}
 			} catch (e) {
-				history.push('/error');
+				console.log(e);
+				history.push('/error', {
+					error: e
+				});
 			}
 		}
 
@@ -39,7 +43,21 @@ export default function ArticlePage(props) {
 			<div className="col-3"></div>
 			<div className="col-6 articledetails">
 				<h1>{article.title}</h1>
-				<p>{article.body}</p>
+				<div>
+					{
+						article.body.map((body) => {
+							return (
+								<div className="article-body-div">
+									<p>{body}</p>
+								</div>
+							);
+						})
+						// article.body
+					}
+				</div>
+				<div style={{
+					marginBottom: '100px'
+				}}></div>
 			</div>
 			<div className="col-3"></div>
 		</div>

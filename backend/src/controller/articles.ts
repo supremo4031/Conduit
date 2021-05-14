@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 interface ArticleData {
 	title: string;
 	description: string;
-	body: string;
+	body: string[];
 	tagList: string[];
 }
 

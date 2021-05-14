@@ -4,7 +4,8 @@ import Articles from './Articles';
 import './HomePage.scss';
 import { useHistory, useLocation } from 'react-router-dom';
 import NavBar from './NavBar';
-import AuthModal from './AuthModal';
+import AuthModal from '../AuthPage/AuthModal';
+import Tags from './Tags';
 
 function useQuery() {
 	return new URLSearchParams(useLocation().search);
@@ -23,6 +24,10 @@ export default function HomePage(props) {
 	console.log(page_no);
 	if(!page_no)
 		page_no = 1;
+
+
+	const closeModal = () => setModal(false);
+	const openModal = () => setModal(true);
 
 	useEffect(() => {
 		async function getCurrentUser() {
@@ -43,11 +48,15 @@ export default function HomePage(props) {
 				}
 			} catch (e) {
 				// history.push('/login');
-				handleModal()
+				// openModal();
 			}
 		}
 
 		getCurrentUser();
+	}, [modal])
+
+	useEffect(() => {
+		
 		async function getArticles() {
 			const res = await axios.get(
 				`http://localhost:4000/api/articles?page=${page_no}`,
@@ -63,23 +72,25 @@ export default function HomePage(props) {
 		getArticles();
 	}, [page_no, history]);
 
-	const handleModal = () => {
-		setModal(!modal);
-	};
 
 	return (
-		<>
+		<div className="parent" style={{
+			filter: modal ? 'blur(6px)' : 'none',
+			height: '100vh'
+		}}>
 			<NavBar
 				username={username}
 				name={name.firstName}
-				handleModal={handleModal}
+				openModal={openModal}
+				closeModal={closeModal}
 			/>
-			<AuthModal visibility={modal} handleModal={handleModal} />
+			{modal ? <AuthModal
+				closeModal={closeModal}
+			/> : null}
 			<div className="row homepage">
 				<div className="col-10p"></div>
 				<div className="col-50p">
 					{articles.map((article) => {
-
 						// console.log(article);
 
 						let dateValue = new Date(article.createdAt)
@@ -103,9 +114,31 @@ export default function HomePage(props) {
 						);
 					})}
 				</div>
-				<div className="col-30p"></div>
+				<div
+					className="col-2h5p vr"
+					style={{
+						marginTop: '30px',
+					}}></div>
+				<div className="col-2h5p"></div>
+				<div className="col-25p tag-container">
+					<h3
+						style={{
+							width: '100%',
+						}}>
+						Topics you follow
+					</h3>
+					<Tags name="Technology" />
+					<Tags name="Technology" />
+					<Tags name="Technology" />
+					<Tags name="Technology" />
+					<Tags name="Technology" />
+					<Tags name="Technology" />
+					<div className="tag-add-button">
+						<b>+</b>
+					</div>
+				</div>
 				<div className="col-10p"></div>
 			</div>
-		</>
+		</div>
 	);
 }

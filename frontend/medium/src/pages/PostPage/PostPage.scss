@@ -1,0 +1,49 @@
+
+.title-text-div {
+    display: block;
+    float: right;
+    padding: 30px;
+    color: #aaa;
+}
+
+
+.post-edit {
+    padding-top: 30px;
+}
+
+.post-title-div {
+    border-left: 1px solid #ccc;
+}
+
+.post-desc-div {
+    margin-top: 10px;
+    border-left: 1px solid #ccc;
+}
+
+.post-title {
+    padding: 10px;
+    padding-left: 20px;
+    background-color: #eee;
+    font-size: 50px;
+    font-weight: 550;
+    letter-spacing: 0;
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.post-desc {
+    padding: 10px;
+    padding-left: 20px;
+    background-color: #eee;
+    font-size: 21px;
+    font-weight: 550;
+    letter-spacing: 0;
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    resize: none;
+}

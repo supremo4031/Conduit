@@ -26,28 +26,28 @@ let Article = class Article {
 };
 __decorate([
     typeorm_1.PrimaryColumn({
-        length: 90,
+        length: 120,
     }),
     __metadata("design:type", String)
 ], Article.prototype, "slug", void 0);
 __decorate([
     typeorm_1.Column({
-        length: 50,
+        length: 70,
     }),
     __metadata("design:type", String)
 ], Article.prototype, "title", void 0);
 __decorate([
     typeorm_1.Column({
-        length: 100,
+        length: 200,
         nullable: true,
     }),
     __metadata("design:type", String)
 ], Article.prototype, "description", void 0);
 __decorate([
-    typeorm_1.Column({
-        type: 'text',
+    typeorm_1.Column('text', {
+        array: true
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Array)
 ], Article.prototype, "body", void 0);
 __decorate([
     typeorm_1.ManyToMany(() => Tag_1.Tag, (tags) => tags.articles, {
@@ -88,6 +88,6 @@ __decorate([
 ], Article.prototype, "updatedAt", void 0);
 Article = __decorate([
     typeorm_1.Entity('articles'),
-    __metadata("design:paramtypes", [String, String, String, String, Array, Array, User_1.User])
+    __metadata("design:paramtypes", [String, String, String, Array, Array, Array, User_1.User])
 ], Article);
 exports.Article = Article;
